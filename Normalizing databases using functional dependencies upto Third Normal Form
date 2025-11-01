@@ -1,0 +1,22 @@
+Functional Dependency:
+CricketBoard (BoardID [PK], Name, Address, Contact_No)
+CricketTeam (TeamID [PK], TName, Coach, Captain)
+CricketPlayer (PlayerID [PK], TeamID [FK], PFName, PLName, Age, PDateofBirth, PlayingRole, email, contact_no, Batting, Bowling)
+CricketMatch (MatchID [PK], TeamID [FK], Match_Date, Time1, Result, GroundID [FK])
+CricketGround (GroundID [PK], GName, Location, Capacity)
+CricketUmpire (UmpireID [PK], UFName, ULName, UAge, UDateofBirth, Country, Uemail, Ucontact_no)
+MatchVenue Table: MatchID (PK, FK), GroundID (FK)BoardID → Name, Address, Contact_NoCreate tables for all non-prime attributes using α+:
+Board Table: BoardID (PK),  Name, Address, Contact_No
+Team Table: TeamID (PK), TName, Coach, Captain
+Player Table: PlayerID (PK), TeamID (FK), PFName, PLName, Age, PDateofBirth, PlayingRole, 
+Email, contact_no, Batting, Bowling
+Match Table: MatchID (PK), TeamID (FK), Match_Date, Time1, Result
+Ground Table: GroundID (PK), GName, Location, Capacity
+Umpire Table: UmpireID (PK), UFName, ULName, UAge, UDateofBirth, Country, Uemail, Ucontact_no
+Create additional tables to represent transitive dependencies:
+BoardID → Name, Address, Contact_No
+TeamID → TName, Coach, Captain
+PlayerID → PFName, PLName, Age, PDateofBirth, PlayingRole, email, contact_no, Batting, Bowling
+MatchID → Match_Date, Time1, Result, GroundID
+GroundID → GName, Location, Capacity
+UmpireID → UFName, ULName, UAge, UDateofBirth, Country, Uemail, Ucontact_no
